@@ -1,0 +1,25 @@
+
+.header__logo {
+  width: 180px;
+  margin-left: 10px;
+}
+
+.header__lineOne {
+  color: white;
+}
+
+.header__lineTwo {
+  font-weight: bold;
+  color: white;
+}
+.header__search-icon {
+  background-color: rgba(255, 132, 0, 0.931);
+  width: 30px;
+  padding: 6px;
+  border: none;
+}
+
+.header__cart {
+  color: #f08804;
+  font-weight: bold;
+}

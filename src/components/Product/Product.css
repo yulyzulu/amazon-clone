@@ -1,0 +1,29 @@
+
+.product {
+  font-size: 14px;
+  margin: 15px;
+}
+
+.product__img {
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+
+.product__rating {
+  color: yellow;
+}
+
+/* .product__price {
+  margin-top: 0;
+} */
+
+.product__button {
+  display: flex;
+  justify-content: center;
+}
+
+.product__cart {
+  margin-top: 10px;
+  border-radius: 30px;
+}
