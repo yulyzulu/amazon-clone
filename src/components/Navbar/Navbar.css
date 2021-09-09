@@ -6,11 +6,13 @@
 
 .header__lineOne {
   color: white;
+  font-size: 14px;
 }
 
 .header__lineTwo {
   font-weight: bold;
   color: white;
+  font-size: 14px;
 }
 .header__search-icon {
   background-color: rgba(255, 132, 0, 0.931);

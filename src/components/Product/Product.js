@@ -1,8 +1,26 @@
 import React from 'react';
 import star from '../../static/star-fill.svg';
 import './Product.css';
+import { useStateValue } from '../StateProvider';
 
 const Product = ({ id, title, image, price, category, rating}) => {
+  const [{cart}, dispatch] = useStateValue();
+  console.log(cart);
+  const addToCart = () => {
+    console.log('clic')
+    dispatch({
+      type: 'ADD_TO_CART',
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+        category: category
+      }
+    });
+  };
+
   return (
     <div className="row">
       <div className="product col-12 col-md-6 col-lg-3 card" >
@@ -17,7 +35,7 @@ const Product = ({ id, title, image, price, category, rating}) => {
             ))
           }
           <div className="product__button">
-            <button className="btn btn-warning product__cart">Add to Cart</button>
+            <button className="btn btn-warning product__cart" onClick={() => addToCart()} >Add to Cart</button>
           </div>
         </div>
       </div>
@@ -33,7 +51,7 @@ const Product = ({ id, title, image, price, category, rating}) => {
             ))
           }
           <div className="product__button">
-            <button className="btn btn-warning product__cart">Add to Cart</button>
+            <button className="btn btn-warning product__cart" onClick={() => addToCart()} >Add to Cart</button>
           </div>
         </div>
       </div>

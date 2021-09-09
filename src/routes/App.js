@@ -21,7 +21,6 @@ function App() {
           <Route exact path="/checkout">
             <NavbarHeader />
             <Checkout />
-            <Footer />
           </Route>
           <Route exact path="/login" component={Login} />
           <Route component={NotFound} />

@@ -7,7 +7,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 const CarouselProm = () => {
   return (
-    <Carousel variant="ligth" id="Carousel" nextLabel="" prevLabel="">
+    <Carousel variant="ligth" id="Carousel" nextLabel="" prevLabel="" slide={false} fade={false} >
       <Carousel.Item>
         <img
           className="d-block w-100 h-75"
