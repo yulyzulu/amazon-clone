@@ -1,0 +1,11 @@
+.selected {
+  display: flex;
+
+  padding: 15px;
+  border-bottom: 1 solid red;
+}
+/* 
+.selected__image {
+  width: 170px;
+
+} */

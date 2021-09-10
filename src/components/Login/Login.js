@@ -25,8 +25,8 @@ const Login = () => {
           <a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=468496" target="blank"> Privacy Notice</a>
         </p>
       </div>
-      <p className="pt-3">New to Amazon?</p>
-      <button type="button" className="login__signUpButton ">Create your Amazon account</button>
+      <p className="pt-3 mb-0">New to Amazon?</p>
+      <button type="button" className="login__signUpButton pt-0">Create your Amazon account</button>
     </section>
   );
 };

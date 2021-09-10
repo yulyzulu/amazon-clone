@@ -9,10 +9,10 @@
   padding: 20px;
   padding-bottom: 5px;
 }
-
+/* 
 .product__rating {
   color: yellow;
-}
+} */
 
 /* .product__price {
   margin-top: 0;
@@ -25,5 +25,8 @@
 
 .product__cart {
   margin-top: 10px;
-  border-radius: 30px;
+  border-radius: 20px;
+  background-color: rgb(255, 208, 0);
+  border: 1px solid;
+  border-color: rgb(255, 208, 0);
 }

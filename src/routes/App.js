@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import { Home } from '../views/Home';
-import { NavbarHeader } from '../components/Navbar/Navbar';
+import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { Login } from '../components/Login/Login';
 import { NotFound } from '../components/NotFound/NotFound';
@@ -14,12 +14,12 @@ function App() {
       {/* <Layout> */}
         <Switch>
           <Route exact path="/" >
-            <NavbarHeader />
+            <Header />
             <Home />
             <Footer />
           </Route>
           <Route exact path="/checkout">
-            <NavbarHeader />
+            <Header />
             <Checkout />
           </Route>
           <Route exact path="/login" component={Login} />

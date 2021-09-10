@@ -1,3 +1,6 @@
+/* .navigation {
+  height: 65px;
+} */
 
 .header__logo {
   width: 180px;
@@ -14,6 +17,22 @@
   color: white;
   font-size: 14px;
 }
+
+.header__link {
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header__form {
+  border: 1px solid #212529;
+  border-radius: 10px;
+}
+
+.header__input {
+  border: none;
+}
+
 .header__search-icon {
   background-color: rgba(255, 132, 0, 0.931);
   width: 30px;
