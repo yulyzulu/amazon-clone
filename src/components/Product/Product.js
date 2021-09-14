@@ -1,5 +1,5 @@
 import React from 'react';
-import star from '../../static/star-fill.svg';
+import star from '../../static/star-emoji.png';
 import './Product.css';
 import { useStateValue } from '../StateProvider';
 
@@ -8,7 +8,7 @@ const Product = ({ id, title, image, price, category, rating}) => {
 
   console.log(cart);
   const addToCart = () => {
-    console.log('clic')
+    // console.log('clic')
     // dispatch the item into the data layer
     dispatch({
       type: 'ADD_TO_CART',

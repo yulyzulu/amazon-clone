@@ -1,11 +1,23 @@
 .selected {
   display: flex;
-
   padding: 15px;
-  border-bottom: 1 solid red;
+  border-bottom: 1px solid lightgray;
 }
-/* 
-.selected__image {
-  width: 170px;
 
-} */
+.selected__image {
+  object-fit: contain;
+  width: 180px;
+  height: 150px;
+}
+
+.selected__delete-button {
+  color: blue;
+  background-color: white;
+  border: none;
+
+}
+
+.selected__title {
+  font-weight: bold;
+  font-size: 17px;
+}

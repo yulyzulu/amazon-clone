@@ -10,3 +10,10 @@
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
+
+.checkout__price {
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

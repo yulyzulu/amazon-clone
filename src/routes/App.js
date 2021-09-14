@@ -13,16 +13,16 @@ function App() {
     <BrowserRouter>
       {/* <Layout> */}
         <Switch>
-          <Route exact path="/" >
-            <Header />
-            <Home />
-            <Footer />
-          </Route>
           <Route exact path="/checkout">
             <Header />
             <Checkout />
           </Route>
           <Route exact path="/login" component={Login} />
+          <Route exact path="/" >
+            <Header />
+            <Home />
+            <Footer />
+          </Route>
           <Route component={NotFound} />
         </Switch>
       {/* </Layout> */}

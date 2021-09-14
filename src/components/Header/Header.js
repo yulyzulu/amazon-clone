@@ -17,9 +17,9 @@ const Header = () => {
   return (
     <header>
       <Navbar bg="dark" expand="lg" variant="dark" className="navigation">
-        <Navbar.Brand href="/">
+        <Link to="/">
           <img src={logo} className="header__logo px-3" alt="Amazon logo" />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="navbarScroll" className="mx-2" />
         <Navbar.Collapse id="navbarScroll">
           <form className="d-flex header__form col-10 offset-1 col-md-7 offset-md-1">
