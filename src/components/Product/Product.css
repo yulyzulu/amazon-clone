@@ -1,7 +1,8 @@
-
 .product {
-  font-size: 14px;
+  font-size: 12px;
   margin: 15px;
+  /* padding: 10px; */
+
 }
 
 .product__img {
@@ -9,18 +10,14 @@
   padding: 20px;
   padding-bottom: 5px;
 }
-/* 
-.product__rating {
-  color: yellow;
-} */
-
-/* .product__price {
-  margin-top: 0;
-} */
 
 .product__button {
   display: flex;
   justify-content: center;
+}
+
+.card-body > p{
+  margin-bottom: 0px;
 }
 
 .product__cart {
@@ -33,4 +30,5 @@
 
 .product__rating {
   width: 25px;
+  margin-bottom: 5px;
 }

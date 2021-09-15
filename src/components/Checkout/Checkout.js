@@ -5,13 +5,18 @@ import { useStateValue } from '../StateProvider';
 import { SelectedProduct } from '../SelectedProduct/SelectedProduct';
 
 const Checkout = () => {
-  const [{ cart }] = useStateValue();
-  console.log(cart)
+  const [{ cart, user }, dispatch] = useStateValue();
+  //console.log(cart)
+  console.log(dispatch);
+
   return (
     <div className="checkout row">
       <div className="col-12 col-md-8 col-lg-9 checkout__left">
         {/* <h2>Your Amazon Cart is empty</h2>
         <p>You have no items in your cart. Buy one</p> */}
+        {
+          user && `Hello, ${user.email.split('@')[0]}`
+        }
         <h2 className="checkout__title">Shopping Cart</h2>
         {
           cart.map(item => (

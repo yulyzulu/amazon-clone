@@ -7,12 +7,20 @@ import { Link } from 'react-router-dom';
 import { BsSearch } from "react-icons/bs";
 import {AiOutlineShoppingCart} from "react-icons/ai";
 import { useStateValue } from '../StateProvider';
+import { auth } from '../../firebase';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
 
-  const [{cart}, dispatch] = useStateValue();
+  const [{cart, user }, dispatch] = useStateValue();
   console.log('header', cart)
   console.log(dispatch)
+
+  const handleAuthentication = () =>{
+    if (user) {
+      signOut(auth);
+    }
+  }
 
   return (
     <header>
@@ -37,9 +45,11 @@ const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Link to="/login" className="header__link" >
-              <span className="header__lineOne">Hello, Sign in </span><br/>
-              <span className="header__lineTwo">Account & Lists</span>
+            <Link to={!user && '/login'} className="header__link" >
+              <div onClick={handleAuthentication}>
+                <span className="header__lineOne">Hello, {user ? user.email.split('@')[0] : 'Guest'} </span><br/>
+                <span className="header__lineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+              </div>
             </Link>
             <Link to="/" className="header__link">
               <span className="header__lineOne">Returns </span><br/>
