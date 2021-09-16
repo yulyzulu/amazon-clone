@@ -1,8 +1,8 @@
 import React from 'react';
 import './Checkout.css';
-import { Subtotal } from '../Subtotal/Subtotal';
-import { useStateValue } from '../StateProvider';
-import { SelectedProduct } from '../SelectedProduct/SelectedProduct';
+import { Subtotal } from '../../components/Subtotal/Subtotal';
+import { useStateValue } from '../../components/StateProvider';
+import { SelectedProduct } from '../../components/SelectedProduct/SelectedProduct';
 
 const Checkout = () => {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -10,17 +10,18 @@ const Checkout = () => {
   console.log(dispatch);
 
   return (
-    <div className="checkout row">
+    <article className="checkout row">
       <div className="col-12 col-md-8 col-lg-9 checkout__left">
         {/* <h2>Your Amazon Cart is empty</h2>
         <p>You have no items in your cart. Buy one</p> */}
         {
-          user && `Hello, ${user.email.split('@')[0]}`
+          user && <h5>Hello, {user.email.split('@')[0]} </h5>
         }
         <h2 className="checkout__title">Shopping Cart</h2>
         {
           cart.map(item => (
             <SelectedProduct
+              key={item.id}
               id={item.id}
               title={item.title}
               image={item.image}
@@ -31,11 +32,10 @@ const Checkout = () => {
           ))
         }
       </div>
-    <div className=" col-12 col-md-4 col-lg-3 checkout__rigth">
-
-      <Subtotal />
-    </div>
-    </div>
+      <div className=" col-12 col-md-4 col-lg-3 checkout__rigth">
+        <Subtotal />
+      </div>
+    </article>
   );
 };
 

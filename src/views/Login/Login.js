@@ -38,7 +38,7 @@ const Login = () => {
   }
 
   return (
-    <section className="login">
+    <article className="login">
       <Link to="/">
         <img className="login__logo" src={logo} alt="Amazon Logo" />
       </Link>
@@ -66,7 +66,7 @@ const Login = () => {
       </div>
       <p className=" mb-0">New to Amazon?</p>
       <button type="button" className="login__signUpButton pt-0" onClick={signUp} >Create your Amazon account</button>
-    </section>
+    </article>
   );
 };
 

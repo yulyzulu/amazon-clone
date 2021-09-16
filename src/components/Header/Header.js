@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" expand="lg" variant="dark" className="navigation">
+      <Navbar bg="dark" id="header" expand="lg" variant="dark" className="navigation">
         <Link to="/">
           <img src={logo} className="header__logo px-3" alt="Amazon logo" />
         </Link>

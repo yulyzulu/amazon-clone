@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer id="footer" className="footer pb-4 ">
-      <a href="/" className="footer__back ">Back to Top</a>
+      <a href="#header" className="footer__back ">Back to Top</a>
       <div className="row text-center text-md-start offset-md-1">
         <div className="col-12 col-md">
           <p className="col mb-1"><span className="fw-bold">Get to Know Us</span></p>

@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { StateProvider } from './components/StateProvider';
 import './index.css';
 import App from './routes/App';
-import { initialState } from './reducer/reducer';
+// import { initialState } from './reducer/reducer';
+import { initialState } from './reducer/initialState';
 import reducer from './reducer/reducer';
 
 ReactDOM.render(

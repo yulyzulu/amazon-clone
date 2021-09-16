@@ -2,6 +2,7 @@
   display: flex;
   padding: 15px;
   border-bottom: 1px solid lightgray;
+  background-color: white;
 }
 
 .selected__image {

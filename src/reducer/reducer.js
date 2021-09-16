@@ -1,6 +1,6 @@
-export const initialState = {
-  cart: [],
-};
+// export const initialState = {
+//   cart: [],
+// };
 
 export const getCartTotal = (cart) =>
   cart.reduce((total, item) => item.price + total, 0);

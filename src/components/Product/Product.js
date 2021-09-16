@@ -24,24 +24,23 @@ const Product = ({ id, title, image, price, category, rating}) => {
   };
 
   return (
-    <div className="row">
-      <div className="product col-12 col-md-6 col-lg-3 card" >
-        <img className="product__img card-img-top" src={image} alt="Computer" />
-        <div className="card-body pt-1">
-          <h5 className="product__price text-center">${price}</h5>
-          <p className="card-text"><strong>{title}</strong></p>
-          <p className="card-text"><small className="text-muted">Shipping Free</small></p>
-          {
-            Array(rating).fill().map((_, i) =>(
-              <img key={i} className="product__rating pe-1" src={star} alt="star" />
-            ))
-          }
-          <div className="product__button">
-            <button className="btn product__cart px-5 py-1" onClick={() => addToCart()} >Add to Cart</button>
-          </div>
+    <section className="product col-11 col-md-5 col-lg-3 card" >
+      <img className="product__img card-img-top" src={image} alt="Computer" />
+      <div className="card-body pt-1">
+        <h5 className="product__price text-center">${price}</h5>
+        <p className="card-text"><strong>{title}</strong></p>
+        <p className="card-text"><small className="text-muted">Shipping Free</small></p>
+        {
+          Array(rating).fill().map((_, i) =>(
+            <img key={i} className="product__rating pe-1" src={star} alt="star" />
+          ))
+        }
+        <div className="product__button">
+          <button className="btn product__cart px-5 py-1" onClick={() => addToCart()} >Add to Cart</button>
         </div>
       </div>
-    </div>
+    </section>
+
   );
 }
 
