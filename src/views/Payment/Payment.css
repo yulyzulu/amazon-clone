@@ -29,5 +29,23 @@
 .payment__address, .payment__items, .payment__details {
   margin-bottom: 0;
   flex: 0.5;
-  /* flex: 0.8; */
+}
+
+.payment__price {
+  color: #b12704;
+}
+
+.payment__card {
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+.payment__button {
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #d67a2f;
+  border-radius: 4px;
+  color: black;
+  width: 40%;
+  padding: 2px;
 }

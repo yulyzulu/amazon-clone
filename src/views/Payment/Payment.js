@@ -54,6 +54,7 @@ const Payment = () => {
       //paymentIntent = payment confirmation
 
       const userRef = doc(db, "users", user?.uid, "orders", paymentIntent.id);
+      console.log('Orden creada', userRef)
       setDoc(userRef, {
           cart: cart,
           amount: paymentIntent.amount,
@@ -123,11 +124,13 @@ const Payment = () => {
           <h3 className="payment__subtitle col-2">Payment Method</h3>
           <div className="payment__details col-8">
             <form onSubmit={handleSubmit}>
-              <CardElement onChange={handleChange} />
-              <div className="payment__priceContainer">
+              <div className="payment__card">
+                <CardElement onChange={handleChange} />
+              </div>
+              <div className="payment__price">
                 <CurrencyFormat
                   renderText= {(value) => (
-                    <h4>Order Total: {value}</h4>
+                    <h3>Payment Total: {value}</h3>
                   )}
                   decimalScale={2}
                   value={getCartTotal(cart)}
@@ -135,7 +138,7 @@ const Payment = () => {
                   thousandSeparator={true}
                   prefix={"$"}
                   />
-                <button disabled={processing || disabled || successful}>
+                <button className="payment__button" disabled={processing || disabled || successful}>
                   <span>{processing ? "Processing" : "Buy Now" }</span>
                 </button>
               </div>

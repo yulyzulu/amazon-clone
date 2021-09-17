@@ -12,9 +12,7 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
 
-  const [{cart, user }, dispatch] = useStateValue();
-  // console.log('header', cart)
-  // console.log(dispatch)
+  const [{cart, user }] = useStateValue();
 
   const handleAuthentication = () =>{
     if (user) {
