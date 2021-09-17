@@ -13,8 +13,8 @@ import { signOut } from 'firebase/auth';
 const Header = () => {
 
   const [{cart, user }, dispatch] = useStateValue();
-  console.log('header', cart)
-  console.log(dispatch)
+  // console.log('header', cart)
+  // console.log(dispatch)
 
   const handleAuthentication = () =>{
     if (user) {
@@ -51,7 +51,7 @@ const Header = () => {
                 <span className="header__lineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
               </div>
             </Link>
-            <Link to="/" className="header__link">
+            <Link to="/orders" className="header__link">
               <span className="header__lineOne">Returns </span><br/>
               <span className="header__lineTwo">   & Orders</span>
             </Link>

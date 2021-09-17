@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Payment.css';
-import axios from 'axios';
+import axios from '../../axios';
 import { useStateValue } from '../../components/StateProvider';
 import { SelectedProduct } from '../../components/SelectedProduct/SelectedProduct';
 import { Link, useHistory } from 'react-router-dom';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getCartTotal } from '../../reducer/reducer';
+import { db } from '../../firebase';
+import { doc, setDoc } from "firebase/firestore";
 
 
 const Payment = () => {
@@ -29,27 +31,50 @@ const Payment = () => {
     const getClientSecret = async () => {
       const response = await axios({
         method: 'post',
-        url: `/payment/create?total=${getCartTotal(cart) * 100}`
+        url: `/payments/create?total=${getCartTotal(cart) * 100}`
       });
       setClientSecret(response.data.clientSecret);
     };
     getClientSecret();
-  }, [cart])
+  }, [cart]);
 
+  console.log('The secret is =>', clientSecret);
+  console.log(user);
   const handleSubmit = async (e) => {
     //do all the fancy stripe stuff
     e.preventDefault();
     setProcessing(true);
 
+    // eslint-disable-next-line
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement)
       }
-    }).then(({paymentIntent}) => {
+    }).then(({ paymentIntent }) => {
       //paymentIntent = payment confirmation
+
+      const userRef = doc(db, "users", user?.uid, "orders", paymentIntent.id);
+      setDoc(userRef, {
+          cart: cart,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created
+        })
+      // db.collection('users')
+      //   .doc(user?.uid)
+      //   .collection('orders')
+      //   .doc(paymentIntent.id)
+      //   .set({
+      //     cart: cart,
+      //     amount: paymentIntent.amount,
+      //     created: paymentIntent.created
+      //   })
+
       setSuccessful(true);
       setError(null);
       setProcessing(false);
+      dispatch({
+        type: 'EMPTY_CART'
+      })
       history.replace('/orders')
     })
   };
@@ -111,7 +136,7 @@ const Payment = () => {
                   prefix={"$"}
                   />
                 <button disabled={processing || disabled || successful}>
-                  <span>{processing ? <p>Processing...</p>: "Buy Now" }</span>
+                  <span>{processing ? "Processing" : "Buy Now" }</span>
                 </button>
               </div>
               {
