@@ -18,6 +18,39 @@ Amazon Clone is an imitation of the Amazon website with basic functionalities su
 ![](src/static/images/orders.png)
 
 
+## Requirements
+- To run the program you will need **node** and **npm** installed globally on your machine.
+
+## Instructions
+
+### Clone repository
+To clone the repository, you must type the following command:
+```
+$ git clone https://github.com/yulyzulu/amazon-clone.git
+```
+
+### Installation
+
+In your console you need to enter to amazon-clone directory, and you must execute the following command:
+
+```
+$ npm install
+```
+This command will download the packages necessary to run the program.
+
+### Execution
+In the amazon-clone directory open two terminals, in one type the following command:
+```
+$ npm run start
+```
+and in the other terminal type the following command to execute the program.
+```
+$ firebase emmulators:start
+```
+
+### Interaction
+Now you can interact with the application, add products to the shopping cart, delete them, pay and see your orders.
+
 ## Technologies
 - ReactJs: React is a JavaScript library created for building fast and interactive user interfaces for web and mobile applications.
 - Firebase: Google Firebase is a Google-backed application development software that enables developers to develop iOS, Android and Web apps.
