@@ -8,8 +8,6 @@ const Product = ({ id, title, image, price, category, rating}) => {
 
   console.log(cart);
   const addToCart = () => {
-    // console.log('clic')
-    // dispatch the item into the data layer
     dispatch({
       type: 'ADD_TO_CART',
       item: {

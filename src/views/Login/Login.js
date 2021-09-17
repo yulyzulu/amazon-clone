@@ -12,10 +12,8 @@ const Login = () => {
 
   const signIn = (e) => {
     e.preventDefault();
-    // Some fancy firebase login shitt
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
         if (userCredential) {
           history.push('/');
         }
@@ -27,14 +25,13 @@ const Login = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        //it successfully created a new user with email
-        //and password
-        console.log(userCredential);
         if (userCredential) {
           history.push('/');
         }
       })
-      .catch((error) => alert(error.message))
+      .catch((error) =>{
+        alert(error)
+      })
   }
 
   return (
@@ -50,12 +47,14 @@ const Login = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <h6 className="fw-bold mt-1 mb-1">Password </h6>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <button className="login__button" type="submit" onClick={signIn} >Sign In</button>
         </form>
@@ -65,7 +64,7 @@ const Login = () => {
         </p>
       </div>
       <p className=" mb-0">New to Amazon?</p>
-      <button type="button" className="login__signUpButton pt-0" onClick={signUp} >Create your Amazon account</button>
+      <button type="button" className="login__signUpButton" onClick={signUp} >Create your Amazon account</button>
     </article>
   );
 };

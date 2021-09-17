@@ -24,18 +24,14 @@ function App() {
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
-    //will only run once when the app component loads...
     onAuthStateChanged(auth, (user) => {
       console.log('The user is', user);
       if (user) {
-        //
-        //const uid = user.uid;
         dispatch({
           type: 'SET_USER',
           user: user,
         })
       } else {
-        //user is signed out
         dispatch({
           type: 'SET_USER',
           user: null,

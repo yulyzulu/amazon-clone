@@ -27,7 +27,7 @@ const Subtotal = () => {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button className="subtotal__button" onClick={(e) => history.push('/payment')} >Proceed to Checkout</button>
+      <button className="subtotal__button" onClick={(e) => history.push('/payment')} disabled={cart.length < 1} >Proceed to Checkout</button>
     </div>
   );
 };

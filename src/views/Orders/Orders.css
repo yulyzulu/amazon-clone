@@ -1,7 +1,8 @@
 .orders {
-  padding: 20px;
+  padding: 30px;
 }
 
-.orders__title {
+.orders__title,
+.orders__notOrders {
   margin: 10px;
 }

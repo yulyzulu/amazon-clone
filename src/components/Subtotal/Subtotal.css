@@ -19,3 +19,7 @@
   font-size: 14px;
   color: black;
 }
+
+.subtotal__button:hover {
+  background-color: #f5d535;
+}

@@ -31,6 +31,9 @@ const Checkout = () => {
             />
           ))
         }
+        {
+          cart.length <= 0 && <p className="ms-2">Your Amazon Cart is empty.</p>
+        }
       </div>
       <div className=" col-12 col-md-4 col-lg-3 checkout__rigth">
         <Subtotal />

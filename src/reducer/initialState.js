@@ -42,7 +42,7 @@ export const initialState= {
       "category": "laptops"
     },
     {
-      "id": 1235,
+      "id": 1238,
       "title": "Newest Asus Zenbook 14' IPS FHD NanoEdge Bezel Display Ultra-Slim Laptop, 16GB RAM, 1TB PCIe SSD, Backlit Keyboard, NumberPad, Windows 10 Pro, Pine Gray with Tikbot Accessories(AMD Ryzen 7 5700U)",
       "image": "https://m.media-amazon.com/images/I/61IM6lnkAOL._AC_UY218_.jpg",
       "price": 1299,
