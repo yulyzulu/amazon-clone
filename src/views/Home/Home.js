@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarouselProm } from '../../components/Carousel/Carousel';
+import { CarouselAds } from '../../components/Carousel/Carousel';
 import { Product } from '../../components/Product/Product';
 import { useStateValue } from '../../components/StateProvider';
 
@@ -9,8 +9,8 @@ const Home = () => {
 
   return (
     <article>
-      <CarouselProm />
-      <div className="container">
+      <CarouselAds />
+      <section className="container">
         <div className="row">
           {computers.map((item => (
             <Product key={item.id}
@@ -23,7 +23,7 @@ const Home = () => {
             />
           )))}
         </div>
-      </div>
+      </section>
     </article>
   );
 };

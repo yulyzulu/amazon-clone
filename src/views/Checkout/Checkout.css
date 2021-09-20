@@ -1,3 +1,5 @@
+/* Checkout */
+
 .checkout {
   display: flex;
   padding: 20px;
@@ -5,10 +7,20 @@
   height: max-content;
 }
 
+.checkout__greeting {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
 .checkout__title {
   margin-right: 10px;
   padding: 10px;
   border-bottom: 1px solid lightgray;
+}
+
+.checkout__emptyCart {
+  margin-left: 10px;
+  height: 300px;
 }
 
 .checkout__price {

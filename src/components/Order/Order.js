@@ -5,7 +5,7 @@ import { SelectedProduct } from '../SelectedProduct/SelectedProduct';
 import CurrencyFormat from 'react-currency-format';
 
 const Order = ({ order }) => {
-  console.log('individualOrder', order);
+
   return (
     <section className="order">
       <div className="row">

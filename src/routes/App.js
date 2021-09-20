@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import { Home } from '../views/Home/Home';
 import { Header } from '../components/Header/Header';
@@ -19,13 +18,12 @@ import { Orders } from '../views/Orders/Orders';
 const promise = loadStripe('pk_test_51Ja5WUFBgCFnV3Pv7RV0Nsw6bts0bYaoF91IjEjExJUAsU35Dj4ZLqzmVEaxbPso4CCCF29Kx9GW3Il6PU2uLOnB00e3HhvpC6');
 
 function App() {
-
   // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log('The user is', user);
+      //console.log(user);
       if (user) {
         dispatch({
           type: 'SET_USER',
@@ -55,12 +53,14 @@ function App() {
           <Route exact path="/checkout">
             <Header />
             <Checkout />
+            <Footer />
           </Route>
           <Route exact path="/payment">
             <Header />
             <Elements stripe={promise}>
               <Payment />
             </Elements>
+            <Footer />
           </Route>
           <Route>
             <Header />

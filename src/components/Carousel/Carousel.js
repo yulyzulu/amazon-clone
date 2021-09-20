@@ -5,7 +5,7 @@ import primeVideo from '../../static/images/primeVideo.jpg';
 import './Carousel.css';
 import Carousel from 'react-bootstrap/Carousel'
 
-const CarouselProm = () => {
+const CarouselAds = () => {
   return (
     <Carousel variant="ligth" id="Carousel" nextLabel="" prevLabel="" slide={false} fade={false} >
       <Carousel.Item>
@@ -33,4 +33,4 @@ const CarouselProm = () => {
   );
 };
 
-export {CarouselProm};
+export {CarouselAds};

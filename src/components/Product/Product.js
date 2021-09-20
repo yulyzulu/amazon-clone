@@ -34,7 +34,7 @@ const Product = ({ id, title, image, price, category, rating}) => {
           ))
         }
         <div className="product__button">
-          <button className="btn product__cart px-5 py-1" onClick={() => addToCart()} >Add to Cart</button>
+          <button type="button" className="btn product__cart px-5 py-1" onClick={() => addToCart()} >Add to Cart</button>
         </div>
       </div>
     </section>

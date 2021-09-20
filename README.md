@@ -45,7 +45,7 @@ $ npm run start
 ```
 and in the other terminal type the following command to execute the program.
 ```
-$ firebase emmulators:start
+$ firebase emulators:start
 ```
 
 ### Interaction

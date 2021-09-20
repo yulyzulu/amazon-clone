@@ -2,10 +2,10 @@ import React from 'react';
 import './Header.css';
 import logo from '../../static/amazon-logo.png';
 import Navbar from 'react-bootstrap/Navbar';
-import {Nav} from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BsSearch } from "react-icons/bs";
-import {AiOutlineShoppingCart} from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useStateValue } from '../StateProvider';
 import { auth } from '../../firebase';
 import { signOut } from 'firebase/auth';
@@ -35,7 +35,7 @@ const Header = () => {
               className="col-12 header__input mr-2 px-2"
               aria-label="Search"
             />
-            <button className="header__search-icon" id="search-addon"><BsSearch /></button>
+            <button type="button" className="header__searchIcon" id="search-addon"><BsSearch /></button>
           </form>
 
           <Nav

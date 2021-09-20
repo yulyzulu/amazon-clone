@@ -2,7 +2,7 @@ import React from 'react';
 import { useStateValue } from '../StateProvider';
 import './SelectedProduct.css';
 
-const SelectedProduct = ({ id, title, image, price, category, rating, hideButton}) => {
+const SelectedProduct = ({ id, title, image, price, hideButton}) => {
   const [{ cart }, dispatch] = useStateValue();
   console.log(cart);
 
@@ -13,7 +13,7 @@ const SelectedProduct = ({ id, title, image, price, category, rating, hideButton
     });
   };
   return (
-    <div className="selected row">
+    <section className="selected row">
       <img className="col-12 col-md-2 col-lg-2 selected__image" src={image} alt={title} />
       <div className="col-12 col-md-7 col-lg-9">
         <p className="selected__title my-0">{title}</p>
@@ -27,7 +27,7 @@ const SelectedProduct = ({ id, title, image, price, category, rating, hideButton
           )
         }
       </div>
-    </div>
+    </section>
   );
 };
 

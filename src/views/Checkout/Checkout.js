@@ -5,17 +5,13 @@ import { useStateValue } from '../../components/StateProvider';
 import { SelectedProduct } from '../../components/SelectedProduct/SelectedProduct';
 
 const Checkout = () => {
-  const [{ cart, user }, dispatch] = useStateValue();
-  //console.log(cart)
-  console.log(dispatch);
+  const [{ cart, user }] = useStateValue();
 
   return (
     <article className="checkout row">
-      <div className="col-12 col-md-8 col-lg-9 checkout__left">
-        {/* <h2>Your Amazon Cart is empty</h2>
-        <p>You have no items in your cart. Buy one</p> */}
+      <section className="col-12 col-md-8 col-lg-9">
         {
-          user && <h5>Hello, {user.email.split('@')[0]} </h5>
+          user && <h5 className="checkout__greeting">Hello, {user.email.split('@')[0]} </h5>
         }
         <h2 className="checkout__title">Shopping Cart</h2>
         {
@@ -32,12 +28,12 @@ const Checkout = () => {
           ))
         }
         {
-          cart.length <= 0 && <p className="ms-2">Your Amazon Cart is empty.</p>
+          cart.length <= 0 && <p className="checkout__emptyCart">Your Amazon Cart is empty.</p>
         }
-      </div>
-      <div className=" col-12 col-md-4 col-lg-3 checkout__rigth">
+      </section>
+      <section className="col-12 col-md-4 col-lg-3">
         <Subtotal />
-      </div>
+      </section>
     </article>
   );
 };

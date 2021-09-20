@@ -51,7 +51,6 @@ const Payment = () => {
           amount: paymentIntent.amount,
           created: paymentIntent.created
         })
-
       setSuccessful(true);
       setError(null);
       setProcessing(false);
@@ -75,32 +74,32 @@ const Payment = () => {
             <Link to="/checkout" className="payment__items">{cart.length} {cart.length === 1 ? 'item' : 'items'}</Link>
           )
         </h1>
-        <div className="payment__section row">
+        <section className="payment__section row">
           <h3 className="payment__subtitle col-2 ">Delivery Address</h3>
           <div className="col-8">
             <p className="payment__address">{user ? user.email.split('@')[0] : ''}</p>
             <p className="payment__address">410 Terry Ave N</p>
             <p className="payment__address">Seattle 98109, WA</p>
           </div>
-        </div>
-        <div className="payment__section">
-        <h3 className="payment__subtitle">Review items and delivery</h3>
-        <div>
-          {
-            cart.map((item) => (
-              <SelectedProduct
-                id={item.id}
-                title={item.title}
-                image={item.image}
-                price={item.price}
-                rating={item.rating}
-                category={item.category}
-              />
-            ))
-          }
-        </div>
-        </div>
-        <div className="payment__section row">
+        </section>
+        <section className="payment__section">
+          <h3 className="payment__subtitle">Review items and delivery</h3>
+          <div>
+            {
+              cart.map((item) => (
+                <SelectedProduct
+                  id={item.id}
+                  title={item.title}
+                  image={item.image}
+                  price={item.price}
+                  rating={item.rating}
+                  category={item.category}
+                />
+              ))
+            }
+          </div>
+        </section>
+        <section className="payment__section row">
           <h3 className="payment__subtitle col-2">Payment Method</h3>
           <div className="payment__details col-8">
             <form onSubmit={handleSubmit}>
@@ -127,7 +126,7 @@ const Payment = () => {
               }
             </form>
           </div>
-        </div>
+        </section>
       </div>
     </article>
   );

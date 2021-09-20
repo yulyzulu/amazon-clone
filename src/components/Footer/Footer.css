@@ -20,6 +20,10 @@
   font-size: 14px;
 }
 
+.footer__link {
+  list-style: none;
+}
+
 .footer__link a:hover {
   text-decoration: underline;
 }

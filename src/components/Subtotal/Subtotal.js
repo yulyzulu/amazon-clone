@@ -16,7 +16,7 @@ const Subtotal = () => {
           <>
             <p className="mb-0">Subtotal ({cart?.length} {cart.length === 1 ? 'item': 'items'}): <strong>{value}</strong></p>
             <small className="subtotal__gift ">
-              <input type="checkbox" className="me-1" />
+              <input type="checkbox" className="me-1" aria-label="gift option" />
               This order contains a gift
             </small>
           </>
@@ -27,7 +27,14 @@ const Subtotal = () => {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button className="subtotal__button" onClick={(e) => history.push('/payment')} disabled={cart.length < 1} >Proceed to Checkout</button>
+      <button
+        type="button"
+        className="subtotal__button"
+        onClick={(e) => history.push('/payment')}
+        disabled={cart.length < 1}
+      >
+        Proceed to Checkout
+      </button>
     </div>
   );
 };

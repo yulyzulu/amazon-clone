@@ -1,6 +1,4 @@
-/* .navigation {
-  height: 65px;
-} */
+/* Header */
 
 .header__logo {
   width: 180px;
@@ -33,7 +31,7 @@
   border: none;
 }
 
-.header__search-icon {
+.header__searchIcon {
   background-color: rgba(255, 132, 0, 0.931);
   width: 30px;
   padding: 6px;
